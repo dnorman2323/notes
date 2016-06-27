@@ -1,0 +1,19 @@
+How to access svn stuff
+
+svn checkout --depth empty http://scm.iqhealth-emr.cerner.corp/svn/sandbox/ 
+
+svn add <thing> 
+
+to get something ready to be added
+
+svn delete <thing>
+
+to delete something
+
+svn status 
+
+for looking at stuff
+
+svn commit -m ‘message’
+
+to commit to the repo
