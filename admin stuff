@@ -1,0 +1,14 @@
+Admin stuff
+
+Firstly, I just wanted to thank you for all the help and guidance throughout the summer. I had a great time working with you and I really learned a lot. I also wanted to ask you something. This September, I am applying to Air Force Officer Training School. It’s been a dream of mine for a long time and it’s quite a extensive application. Part of that application is letters of recommendation. I would be extremely gratefully, if you’re not too busy, to write a short one-page reference letter for me and send it to my recruiter. 
+
+Great! I’ll email you the details, like my recruiters email and the like. 
+
+
+Resume
+
+- Worked alongside Software Engineers to develop a mobile app smart banner which informed android users using the HealtheLife website that there was a HealtheLife Android App which they could download. The banner would link the user to the google play store page of HealtheLife where they could install or open it. 
+- Developed the admin tools to customize the mobile app smart banner. Attributes to customize the mobile app smart banner included a choice to display the Cerner HealtheLife App on the banner or a custom app of the organization’s choice. If the user wanted a custom app, they would have to fill out fields such as title, bundle id, and a custom icon. The admin tool would then use that custom information to edit the smart banner accordingly. 
+- Worked on a web development team developing the Cerner solution HealtheLife which included a web-based patient portal for patients to manage their own healthcare including looking at their medical records, messaging and scheduling appointment with their doctor, and taking health-based informative workshops. They also developed the admin tool for the patient portal for healthcare organizations to customize the patient portal for their needs and preferences. 
+
+Proficient in Python, Django, and Subversion. Familiar with Javascript, Agile, and Lean. 
