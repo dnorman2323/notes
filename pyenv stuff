@@ -1,0 +1,18 @@
+How to Access virtualenv stuff
+workon <name>
+cdvirtualenv
+alias iqh_install
+iqh_install
+python install.py
+
+OR just
+workon <name>
+cdvirtualenv
+
+
+to install lxml:
+STATIC_DEPS=true pip install lxml
+
+to build a new one:
+virtualenv <name>
+
