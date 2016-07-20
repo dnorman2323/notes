@@ -1,0 +1,41 @@
+Presentation
+
+Hello I’m Danny Norman, the intern with the Mobile Team and this summer I worked on implementing an Android Smart Banner and its Admin Tool Configurations. Firstly, I’ll show you the Admin tool and how the client would configure the end user smart banner. The layout is very similar to that of the iOS settings but we needed to add some extra fields because, as you’ll see, we had to build the end user Android banner from scratch as opposed to the iOS banner which is handled nicely by Apple. So the client has two choices, they can either use the default HealtheLife App or they can use a custom app of their choosing by filling out the fields. We’ll keep at the default for now. So lets switch over to IQH and show you what the the end user sees. 
+
+**SWITCH TO IQH**
+
+Instead of getting out a phone, I’m using an emulator simply called mobile browser emulator which I recommend if you ever want to quickly see what a mobile website looks like. When the user logs in to their account the banner will automatically appear at the top of the page. 
+
+
+That was pretty much my summer, any questions? Okay, thanks. 
+
+They may not be aware of the app existence, push them away browser version. Capabilities, dismissing 
+
+Hello I’m Danny Norman, an intern with the Mobile Team and this summer I worked on implementing an Android Smart Banner in portal and its Admin Tool Configurations. Firstly, why did we want to make this? There are users that use the mobile browser version of the patient portal on their android device. We want to notify those users that, instead of the mobile browser version of portal, they could be using the official HealtheLife Android App to access portal, which I’m sure my teammates can attest to its optimized user experience. This information is advertised to the user with a small banner at the top of the screen that shows the name of the app, the app icon, and a button to link you to the play store to download and use the app. The user also has the option to dismiss this banner if they have already downloaded the app or just don’t want to see it. We also wanted to give organizations the option to manage and customize this banner from the admin tool. Also, iOS already has one so we wanted to keep our functionality even.  
+
+Outline:
+
+Existing banner for iOS so we wanted to keep our functionality even 
+
+Open with configs, how I expanded those
+
+The way that the banner is generated on iOS is very easy because it’s all handled by Apple. Originally wanted to use an API for android banners called branch.io , their api showed the functionality that we wanted including dynamic linking, however it wasn’t working properly, we logged a ticket with them and after a few emails back in forth with one of their integration engineers, we discovered that, after our conversation with them, they deleted the functionalities we wanted from their documentation. So they lost our support. So where did we go from there? We looked into other existing solution and they were all pretty bad or required new dependencies. So we decided to bite the bullet and build this thing from scratch. It was actually a lot easier than I thought it was going to be. I had to create a new style-guide component and some javascript, CSS, and div tags I was able to build what you see. 
+
+
+Intro:
+
+Why?
+Users should be using app instead of mobile browser version of portal
+How?
+Information is advertised with small banner, app name, app icon, and a button to link to play store
+Also has the option to dismiss the banner forever if they don’t want to see it 
+
+Demo:
+
+Show banner
+Show Features
+For the sake of this demo I’m using an emulator. So on an actual android device it would properly link you to the play store. 
+Next I’ll show you how an organization can configure the banner in the admin tool. 
+
+
+
