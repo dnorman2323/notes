@@ -1,0 +1,131 @@
+Daily Notes
+
+Monday 6/13/16
+Scrum: to start working on PORTALDEV-28405, also revising code review of Twitter project
+Read JIRA documentation, walk through developers guidance doc, installed a branch in repo with Nick, started working on PORTALDEV-28405, followed tech design, finished first three steps, started view stuff, looks like majority of the work for this JIRA. 
+
+Tuesday 6/14/16
+Scrum: working on 28405, still revising twitter project
+Planning Meeting: straighten out requirements
+Worked on view related stuff, got rid of description, have generic one, added error raising conditions, struggling with icon field. Showed layout to Nick S., he liked it, suggested I added a few more labels. 
+
+Wednesday 6/15/16
+Scrum: showed off basic layout of moon pie stuff to the gang, said “that was quick”, will start on the icon stuff and clean up things. 
+Fixed icon submit problem, field persistence, started on template tags. FINISHED CODE REVIEW OF TWITTER PROJECT!!! Started working on PORTALDEV-28408
+
+Thursday 6/16/16
+Kanban: Talked about meta stuff, how to do JIRAs, how to measure progress. 
+Pop Health Overview: Talk about various Pop Health solutions including HealtheRecord, HealtheAnalytics, but not HealtheLife. Continued to work on template tag, added icon. Finished up template tags, looked into build scripts. Fought for my desk. I won.
+
+Friday 6/17/16
+Scrum: To continue with icon stuff, might bypass for it now just to get a banner working. 
+Work on getting banner to display on iqh main page. Look at HELDROID for comparison. Talked with Nick, he’ll look at my branch and we’ll figure it out next week. 
+
+Monday 6/20/16
+Scrum: Got the banner to display with the help of Nick reseting the branch key. Continue to work on Banner display.
+Banner displays the Title and links to the Google Play Store dynamically. Branch.io acting up, doesn’t want to link to the play store even though the links are the right format as confirmed by the console log. 
+
+Tuesday 6/21/16
+Demo: Nothing
+Scrum: Keeping working on the dumb banner links
+Tried various configuration of code to get the dumb banner links to work but to no avail. Nick also can’t seem to figure out what’s wrong with the API. He submitted a ticket to the API because jesus, the documentation is awful and it ain’t working. 
+
+Wednesday 6/22/16
+Scrum: Keep working on dumb banner links
+Banner links still don’t work, it seems like the only place where they can be manipulated is on the branchi.io dashboard which is far from convenient. Branch.io responded back to Nick, he’s going to send them a code snippet and hopefully they can tell us what to do. Brainstormed with Nick for about a hour and troubleshooted through the api by inspecting the webpage and outputting stuff to the console. That didn’t lead to much but there was some good banter between the two of us. Nick left and I tried another banner option which was just some CSS and javascript embedded in the template. I managed to make the link and title dynamic but currently you can’t hide the banner and it’s not sync up with moon pie to show/hide. 
+
+Thursday 6/23/16
+Scrum: Keeping working on banner links
+Nick got another email from branch.io they said something about some settings or whatever. We’ll see if that actually works. It works. It actually works. The guy at branch.io was right, all I had to do was fill out some bogus settings in the dashboard settings then it started looking at the android_url. So now that it is going to the specified android_url, it will only go to the mobile website and not play store itself. So, to remedy this, Nick suggested I take control of where exactly it is going to by having it redirect internally and add view that only redirects to the correct play store url. Added the android_redirect view, still going to the mobile site even after putting in the specified market url. Going to use a template view with some javascript and hopefully that will redirect correctly from the mobile side. 
+
+Friday 6/24/16 
+Scrum: figure out a template that will correctly redirect the user to the play store instead of the mobile browser site. 
+Filed Time&Expense Report. Fiddle around with the template and discovered that <a> tags will link to the play store directly. But the user has to explicitly click on the link. Nick says we have to talk to Kristina and see what’s better a transition page, or just having them go the mobile browser site. This is all because you can’t redirect to the play store, you can only link. 
+
+Monday 6/27/16
+Tried to figure out automatic clicking, but browser security doesn’t enable it. Going to look at icon uploading. Took similar icon upload code from logo_utils.py and it seems to be adding the image and giving it a custom url. Need to figure how to use that address in my icon preview and the banner icon. Custom banner upload now works. 
+
+Tuesday 6/28/16
+Scrum: Finished custom app icon upload and preview stuff, to investigate new banner option. 
+Fixed the banner showing up on the login screen problem and implemented the actual show/hide functionality of the banner. Going to build our own banner with blackjack and uh…
+
+Wednesday 6/29/16
+Scrum: Getting started with style_guide
+Kanban: Discussed my project, said I was basically done with moon_pie stuff. 
+Getting into style guide to make the less, javascript to make the banner. Installed local style_guide, got the style_guide into portal and got the banner rendering in portal. Fixed the issue of dynamic white space and having the banner follow you while you navigate.
+
+Thursday 6/30/16
+Scrum: Put moon_pie stuff on code review 
+Worked on the custom banner, trying to fit the image in there as best as I can. Have a dynamic title now.  
+
+Friday 7/1/16
+No Scrum today
+Worked on Nick Comments on the code review and got everything he addressed fixed. Then I worked on the custom banner and was able to dynamically generate the link to the play store, go me. 
+
+Monday 7/4/16
+Holiday
+
+Tuesday 7/5/16
+Scrum: Work on code review, banner stuff. 
+Figured out android detection, will only show if it detects an android device. Implemented close banner save with javascript cookies, however, it’ll load every time for a brief second then disappear as it should. Banner won’t show on the login page now, still having the problem where the banner will show for a brief second then disappear when it’s hidden. 
+
+Wednesday 7/6/16
+Scrum: Dive in to testing
+Dive into unit testing today. Fixed the problem where it would load for a brief second then disappear. This no longer happens in portal, in the login page, or in the desktop portal. Appended some android values onto existing tests in form_tests and view_tests. No errors for those files at the moment, time to create some new tests just for android. 
+
+Thursday 7/7/16
+Demo
+Scrum: Testing
+Going to try and write some more tests instead of just appending existing ones, then maybe ask about locales and testing for the banner stuff. Wrote some tests for the view_tests, got stuck on two tests that test if the user is using the default HealtheLife app, then the android_bundle_id is equal to the default. Both the iOS and Android return empty strings and I’m not sure why. 
+
+Friday 7/8/16
+Scrum: Work on tests, sync up with Kristina, Nick on banner visuals. 
+Going to try to write some more tests today. Wrote some tests to the initial values when it was previously a custom app and when it was the default app. Wrote some tests that tests that the initial custom app ids are empty initially. Got my DevCon badge today. Got Hufflepuff…typical. 
+
+Monday 7/11/16
+Scrum: Testing and Others
+Found a bug in moon_pie that no matter what use_custom_android is it will validate the bundle id field if it’s filled. Nick and Kristina says it’s not a issue. Nearly had to install a new version of trunk and merge all my stuff to that. Sent screenshots to Kristina. Updated my code review with my new unit tests as well as some model changes including renaming “bundle_id” to “android_app_id”. 
+
+Tuesday 7/12/16
+Scrum: commit stuff to style_guide with Roger, check with designer about design, try to get both style_guide stuff and banner stuff on code review. 
+Changed some more bundle_ids to “android_app_id”. Got iqh and style-guide stuff on code review.
+
+Wednesday 7/13/16
+Scrum: Work on review
+Addressed some of Matt’s comments in the review. Had a meeting with David about my manager review and overall how I did throughout the summer. It went well and he had a lot of nice things to say about me which was nice. 
+
+Thursday 7/14/16
+DevCon Day 1
+Best Talks was Security Essentials and Learning how to Learn
+
+Friday 7/15/16
+DevCon Day 2
+Best Talks were Doctor Guy telling us the big picture, Other Security one, and Relationships and why they’re important
+
+Monday 7/18/16
+Scrum: Work on Review, Presentation for Thursday 
+Stuff is still in review. Got David to get a reference letter. Sent him a email with the details. Reviewed my code for both reviews to make sure I hadn’t missed any comments on those. 
+
+Tuesday 7/19/16
+Scrum: Wait for review comments if any, work on presentation
+Worked on presentation, went through it a couple a times. Got Roger to write a reference letter for me. Sent him a email with the details. 
+
+Wednesday 7/20/16
+Scrum: Still need eyes on my review, going to work on my presentation. 
+Addressed some review comments, prepared my presentation. 
+
+Thursday 7/21/16
+Scrum: Review
+Addressed all of Brett’s question in the review 
+
+Friday 7/22/16
+Don’t Remember
+
+Monday 7/25/16
+Sick
+
+Tuesday 7/26/16
+Scrum:
+
+
+
