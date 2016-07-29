@@ -1,4 +1,4 @@
-How to access svn stuff
+How to access svn and git stuff
 
 svn checkout --depth empty http://scm.iqhealth-emr.cerner.corp/svn/sandbox/ 
 
@@ -17,3 +17,15 @@ for looking at stuff
 svn commit -m ‘message’
 
 to commit to the repo
+
+
+git status
+
+git add
+
+git branch
+
+git commit -m ‘asdf’
+
+git push origin branch
+
